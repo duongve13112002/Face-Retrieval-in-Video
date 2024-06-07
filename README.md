@@ -50,17 +50,10 @@ To use the face retrieval system, follow these steps:
 1. Prepare your query image and video file.
 2. Run the face retrieval script:
    ```bash
-   python face_retrieval.py --query query_image.jpg --video input_video.mp4
+   python face_retrieval.py --query query_image.jpg --video input_video.mp4 --output='./output'
    ```
 
 3. The script will process the video and display frames with detected faces, highlighting those that match the query image.
-
-### Command-Line Arguments
-
-- `--query`: Path to the query image.
-- `--video`: Path to the input video file.
-- `--output`: (Optional) Path to save the output video with annotations.
-- `--threshold`: (Optional) Confidence threshold for face recognition (default is 0.5).
 
 ## Method
 - Step 1: Extract keyframes from the video:
