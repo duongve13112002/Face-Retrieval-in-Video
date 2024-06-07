@@ -69,7 +69,7 @@ To use the face retrieval system, follow these steps:
   2. **Cluster Similar Candidate Frames**: Group similar frames by processing each frame (scaling, converting to greyscale, applying cosine transformation) and using HDBSCAN for clustering, which doesn't require specifying the number of clusters in advance.
 
   3. **Select Best Frames from Each Cluster**: Choose the best frame from each cluster based on brightness and image blur index (Laplacian score). Discard all other frames in the cluster as they contain similar content.
-- Step 2: Use the facial recognition model in the DeepFace library to identify the position of faces in the keyframes and query images. Then, input these into deep learning models to extract features and use a similarity measurement function to compare the features of each face in each keyframe with the features of the faces in the query images. If they meet the threshold, save that keyframe.
+- Step 2: Use the face recognition model from the DeepFace library to detect the locations of faces in the keyframes and the query images to extract the faces. Then, input these face images into deep learning models to extract features and use a similarity measurement function to compare the features of each face in each keyframe with the features of each face in the query images. If they meet the threshold, save the frame.
   * To enhance performance with masked faces, use additional lineart images of the faces to improve the overall effectiveness of the method.
 
 ## Contributing
