@@ -14,7 +14,6 @@ def save_img(images,folder):
 	for count, image in enumerate(images):
 		cv2.imwrite(os.path.join(folder, str(count)+'.png'),image)
 
-#args.query, args.video, args.output, args.is_face, args.len_slide_window, args.max_frame_one_time, args.type_window, args.threshold, args.threshold_lineart
 def Extraxting_face(image_path, video_path, output, is_image_retrieval_face, len_slide_window,  max_frame_one_time, type_window, similarity_threshold, similarity_threshold_lineart,detector_backend,feature_extractor,metric):
 	#hyperparameters
 	video_path = video_path
@@ -62,7 +61,7 @@ def main():
 
 	args = parser.parse_args()
 
-	merge_models(args.query, args.video, args.output, args.is_face, args.len_slide_window, args.max_frame_one_time, args.type_window, args.threshold, args.threshold_lineart, args.detector_backend, args.feature_extractor, args.metric)
+	Extraxting_face(args.query, args.video, args.output, args.is_face, args.len_slide_window, args.max_frame_one_time, args.type_window, args.threshold, args.threshold_lineart, args.detector_backend, args.feature_extractor, args.metric)
 
 if __name__ == '__main__':
 	main()
