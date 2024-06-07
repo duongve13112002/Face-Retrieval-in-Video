@@ -63,7 +63,12 @@ To use the face retrieval system, follow these steps:
 - `--threshold`: (Optional) Confidence threshold for face recognition (default is 0.5).
 
 ## Method
-- 
+- Frame Extraction has 3 steps:
+  1. **Extract Candidate Frames**: Identify potential key frames by calculating differences between subsequent frames and selecting the most different frame within a window, reducing the number of frames to process.
+
+  2. **Cluster Similar Candidate Frames**: Group similar frames by processing each frame (scaling, converting to greyscale, applying cosine transformation) and using HDBSCAN for clustering, which doesn't require specifying the number of clusters in advance.
+
+  3. **Select Best Frames from Each Cluster**: Choose the best frame from each cluster based on brightness and image blur index (Laplacian score). Discard all other frames in the cluster as they contain similar content. 
 
 ## Contributing
 
@@ -85,8 +90,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 We would like to thank the following resources and individuals:
 
-- OpenCV for their extensive library of computer vision tools.
-- Deepface for the robust facial detection.
+- [Deepface](https://github.com/serengil/deepface) by Serengil
+- [OpenCV](https://opencv.org/) by OpenCV team
 ---
 
 For any questions or issues, please open an issue in the GitHub repository. Happy coding!
