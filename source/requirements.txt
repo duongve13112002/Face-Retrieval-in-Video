@@ -1,0 +1,14 @@
+matplotlib
+numpy
+opencv-python
+Pillow
+transformers
+hdbscan
+mediapipe
+controlnet_aux
+torchvision
+deepface
+pytorch-lightning
+insightface
+onnxruntime
+tensorflow
