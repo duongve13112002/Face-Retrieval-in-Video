@@ -94,6 +94,7 @@ We would like to thank the following resources and individuals:
 
 - [Deepface](https://github.com/serengil/deepface) by Serengil
 - [OpenCV](https://opencv.org/) by OpenCV team
+- [Controlnet aux](https://github.com/huggingface/controlnet_aux) by Huggingface team
 ---
 
 For any questions or issues, please open an issue in the GitHub repository. Happy coding!
