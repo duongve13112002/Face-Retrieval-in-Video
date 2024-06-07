@@ -63,12 +63,14 @@ To use the face retrieval system, follow these steps:
 - `--threshold`: (Optional) Confidence threshold for face recognition (default is 0.5).
 
 ## Method
-- Frame Extraction has 3 steps:
+- Step 1: Extract keyframes from the video:
   1. **Extract Candidate Frames**: Identify potential key frames by calculating differences between subsequent frames and selecting the most different frame within a window, reducing the number of frames to process.
 
   2. **Cluster Similar Candidate Frames**: Group similar frames by processing each frame (scaling, converting to greyscale, applying cosine transformation) and using HDBSCAN for clustering, which doesn't require specifying the number of clusters in advance.
 
-  3. **Select Best Frames from Each Cluster**: Choose the best frame from each cluster based on brightness and image blur index (Laplacian score). Discard all other frames in the cluster as they contain similar content. 
+  3. **Select Best Frames from Each Cluster**: Choose the best frame from each cluster based on brightness and image blur index (Laplacian score). Discard all other frames in the cluster as they contain similar content.
+- Step 2: Use the facial recognition model in the DeepFace library to identify the position of faces in the keyframes and query images. Then, input these into deep learning models to extract features and use a similarity measurement function to compare the features of each face in each keyframe with the features of the faces in the query images. If they meet the threshold, save that keyframe.
+-    To enhance performance with masked faces, use additional lineart images of the faces to improve the overall effectiveness of the method.
 
 ## Contributing
 
